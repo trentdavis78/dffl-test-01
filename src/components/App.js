@@ -1,9 +1,20 @@
 import React, { Component } from 'react';
 import roster from '../data/sampleRosterData';
 import schedule from '../data/sampleScheduleData';
+require('dotenv').config();
 
 class App extends Component {
-    
+    constructor(props){
+        super(props);
+        this.state = {
+            roster: []
+          }
+        }
+
+    componentDidMount() {
+
+    }
+
     getStarters(arr) {   
         const starters = arr.filter(v => v.position !== "Bench");
         return starters;
